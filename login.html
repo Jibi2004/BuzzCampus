@@ -68,9 +68,9 @@
     <form id="loginForm">
       <input type="text" id="username" placeholder="Username" required>
       <input type="password" id="password" placeholder="Password" required>
-    <a href="event.html"> <button type="submit">Login</button></a>
+    <a href="index.html"> <button type="submit">Login</button></a>
     </form>
-     <p>Don't have an account? <a href="event.html">Sign up here</a></p> 
+     <!-- <p>Don't have an account? <a href="index.html">Sign up here</a></p>  -->
   </div>
 
   <script>
@@ -83,7 +83,7 @@
       // Simple validation
       if (username === 'user' && password === 'password') {
         alert('Login successful! Redirecting to the event page...');
-        window.location.href = 'event.html'; // Redirect to event page
+        window.location.href = 'index.html'; // Redirect to event page
       } else {
         alert('Invalid username or password. Please try again.');
       }
