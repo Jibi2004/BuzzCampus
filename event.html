@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Fest 2025</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .event {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+    }
+    .event img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .event h3 {
+      margin: 0 0 10px;
+      color: #2575fc;
+    }
+    .event p {
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+    .event button {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .event button:hover {
+      background: #1a5bbf;
+    }
+    .registration-form {
+      display: none;
+      margin-top: 10px;
+    }
+    .registration-form input, .registration-form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .registration-form button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      display: none;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tech Fest 2025</h1>
+    <p>Celebrating Innovation and Creativity</p>
+  </header>
+  <div class="container">
+    <!-- Event 1: eSports Tournament -->
+    <div class="event">
+      <img src="https://d3c9kujynjspib.cloudfront.net/images/2022/08/22/daa725b7a70b6a7c73579283.png" alt="eSports Tournament">
+      <h3>eSports Tournament</h3>
+      <p><strong>Date:</strong> February 15, 2025<br><strong>Time:</strong> 10:00 AM - 6:00 PM<br>Compete in the ultimate gaming showdown featuring popular titles like Valorant and FIFA.</p>
+      <button onclick="toggleRegistration('esports')">Register Now</button>
+      <div id="esports" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="paid">Paid - $100</option>
+        </select>
+        <button onclick="registerEvent('esports')">Submit</button>
+        <p>Seats Available: <span id="esports-seats">100</span></p>
+      </div>
+    </div>
+
+    <!-- Event 2: Drone Show -->
+    <div class="event">
+      <img src="https://wp.dronestories.com/app/uploads/2024/05/1666192890.png.webp" alt="Drone Show">
+      <h3>Drone Show</h3>
+      <p><strong>Date:</strong> February 16, 2025<br><strong>Time:</strong> 7:00 PM - 8:00 PM<br>Experience a mesmerizing display of synchronized drones lighting up the night sky.</p>
+      <button onclick="toggleRegistration('drone-show')">Register Now</button>
+      <div id="drone-show" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="free">Free</option>
+        </select>
+        <button onclick="registerEvent('drone-show')">Submit</button>
+      </div>
+    </div>
+
+    <!-- Event 3: AR/VR Show -->
+    <div class="event">
+      <img src="https://console.kr-asia.com/wp-content/uploads/2023/06/medium-shot-man-wearing-vr-glasses-2048x1152.jpg" alt="AR/VR Show">
+      <h3>AR/VR Show</h3>
+      <p><strong>Date:</strong> February 17, 2025<br><strong>Time:</strong> 11:00 AM - 2:00 PM<br>Immerse yourself in the world of augmented and virtual reality with interactive demos.</p>
+      <button onclick="toggleRegistration('ar-vr-show')">Register Now</button>
+      <div id="ar-vr-show" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="free">Free</option>
+        </select>
+        <button onclick="registerEvent('ar-vr-show')">Submit</button>
+      </div>
+    </div>
+
+    <!-- Event 4: Coding Hackathon -->
+    <div class="event">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpmvNx5r9jnd4vGlWaKEhtvXkCClfD7FTQ7w&s" alt="Coding Hackathon">
+      <h3>Coding Hackathon</h3>
+      <p><strong>Date:</strong> February 18, 2025<br><strong>Time:</strong> 9:00 AM - 6:00 PM<br>Solve real-world problems with your coding skills and win exciting prizes.</p>
+      <button onclick="toggleRegistration('coding-hackathon')">Register Now</button>
+      <div id="coding-hackathon" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="paid">Paid - $200</option>
+        </select>
+        <button onclick="registerEvent('coding-hackathon')">Submit</button>
+        <p>Seats Available: <span id="coding-hackathon-seats">50</span></p>
+      </div>
+    </div>
+
+    <!-- Event 5: RC Racing Show -->
+    <div class="event">
+      <img src="https://img1.wsimg.com/isteam/ip/8debee5c-d852-4466-acaf-e294384ee442/RC%20Car%20web.jpg/:/rs=w:1240,h:620,cg:true,m/cr=w:1240,h:620" alt="RC Racing Show">
+      <h3>RC Racing Show</h3>
+      <p><strong>Date:</strong> February 19, 2025<br><strong>Time:</strong> 3:00 PM - 5:00 PM<br>Watch high-speed RC cars compete in thrilling races.</p>
+      <button onclick="toggleRegistration('rc-racing')">Register Now</button>
+      <div id="rc-racing" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="free">Free</option>
+        </select>
+        <button onclick="registerEvent('rc-racing')">Submit</button>
+      </div>
+    </div>
+
+    <!-- Event 6: Moto Show -->
+    <div class="event">
+      <img src="https://tokyo-in-pics.com/wp-content/uploads/2024/01/Tokyo-Motor-Show-2019-Honda-NSX-car.webp" alt="Moto Show">
+      <h3>Moto Show</h3>
+      <p><strong>Date:</strong> February 20, 2025<br><strong>Time:</strong> 10:00 AM - 12:00 PM<br>Check out the latest in motorcycle technology and design.</p>
+      <button onclick="toggleRegistration('moto-show')">Register Now</button>
+      <div id="moto-show" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="free">Free</option>
+        </select>
+        <button onclick="registerEvent('moto-show')">Submit</button>
+      </div>
+    </div>
+
+    <!-- Event 7: Tech Quiz Competition -->
+    <div class="event">
+      <img src="https://srmmcet.edu.in/wp-content/uploads/2023/10/techday-technical-quiz.webp" alt="Tech Quiz Competition">
+      <h3>Tech Quiz Competition</h3>
+      <p><strong>Date:</strong> February 21, 2025<br><strong>Time:</strong> 2:00 PM - 4:00 PM<br>Test your knowledge of technology and win exciting prizes.</p>
+      <button onclick="toggleRegistration('tech-quiz')">Register Now</button>
+      <div id="tech-quiz" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="free">Free</option>
+        </select>
+        <button onclick="registerEvent('tech-quiz')">Submit</button>
+      </div>
+    </div>
+
+    <!-- Event 8: AI Workshop -->
+    <div class="event">
+      <img src="https://i.ytimg.com/vi/Bmw7IIEzv7w/maxresdefault.jpg" alt="AI Workshop">
+      <h3>AI Workshop</h3>
+      <p><strong>Date:</strong> February 22, 2025<br><strong>Time:</strong> 10:00 AM - 1:00 PM<br>Learn the basics of artificial intelligence and its applications.</p>
+      <button onclick="toggleRegistration('ai-workshop')">Register Now</button>
+      <div id="ai-workshop" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="paid">Paid - $150</option>
+        </select>
+        <button onclick="registerEvent('ai-workshop')">Submit</button>
+        <p>Seats Available: <span id="ai-workshop-seats">30</span></p>
+      </div>
+    </div>
+
+    <!-- Event 9: 3D Printing Expo -->
+    <div class="event">
+      <img src="https://trellis.net/wp-content/uploads/2024/07/3dprintingasharkyusstock.png?w=1024" alt="3D Printing Expo">
+      <h3>3D Printing Expo</h3>
+      <p><strong>Date:</strong> February 23, 2025<br><strong>Time:</strong> 11:00 AM - 3:00 PM<br>Explore the latest innovations in 3D printing technology.</p>
+      <button onclick="toggleRegistration('3d-printing')">Register Now</button>
+      <div id="3d-printing" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="free">Free</option>
+        </select>
+        <button onclick="registerEvent('3d-printing')">Submit</button>
+      </div>
+    </div>
+
+    <!-- Event 10: Startup Pitch Competition -->
+    <div class="event">
+      <img src="https://www.growthmentor.com/wp-content/uploads/2022/11/startup-pitch-competition.jpg" alt="Startup Pitch Competition">
+      <h3>Startup Pitch Competition</h3>
+      <p><strong>Date:</strong> February 24, 2025<br><strong>Time:</strong> 10:00 AM - 4:00 PM<br>Pitch your startup idea to a panel of judges and win funding.</p>
+      <button onclick="toggleRegistration('startup-pitch')">Register Now</button>
+      <div id="startup-pitch" class="registration-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <select>
+          <option value="paid">Paid - $200/option>
+        </select>
+        <button onclick="registerEvent('startup-pitch')">Submit</button>
+        <p>Seats Available: <span id="startup-pitch-seats">20</span></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Popup -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <h2>Welcome to Tech Fest 2025!</h2>
+    <p>Get ready for an exciting journey into the world of technology and innovation.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <script>
+    // Popup functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('popup').style.display = 'block';
+    });
+
+    function closePopup() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    // Registration form toggle
+    function toggleRegistration(eventId) {
+      const form = document.getElementById(eventId);
+      form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Event registration logic
+    function registerEvent(eventId) {
+      const seatElements = {
+        'esports': 'esports-seats',
+        'coding-hackathon': 'coding-hackathon-seats',
+        'ai-workshop': 'ai-workshop-seats',
+        'startup-pitch': 'startup-pitch-seats'
+      };
+
+      if (seatElements[eventId]) {
+        const seats = document.getElementById(seatElements[eventId]);
+        let availableSeats = parseInt(seats.textContent);
+        if (availableSeats > 0) {
+          availableSeats--;
+          seats.textContent = availableSeats;
+          alert('Registration successful!');
+        } else {
+          alert('Sorry, no seats available.');
+        }
+      } else {
+        alert('Registration successful!');
+      }
+    }
+  </script>
+</body>
+</html>
+</html>
