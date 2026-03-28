@@ -14,35 +14,37 @@
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+BuzzCampus is a web-based platform designed to showcase and manage campus tech fest events. It allows users to explore different events, view detailed information, and register easily through an interactive interface. The system provides a smooth and user-friendly experience for both participants and organizers.
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
-
+College event management is often confusing and unorganized. Students struggle to find event details, schedules, and registration processes in one place. This creates inconvenience and reduces participation.
 ### The Solution
-[How are you solving it? Keep it fun!]
-
+BuzzCampus solves this by providing a centralized digital platform where all event details are available in one place. Users can browse events, check timings, and register instantly. The system is simple, interactive, and designed to improve user experience.
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Languages: HTML, CSS, JavaScript
+- Frameworks: None
+- Libraries: None
+- Tools: VS Code, GitHub
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
-
+- Computer/Laptop
+- Internet Connection
+- Browser (Chrome, Edge, etc.)
 ### Implementation
 For Software:
+- Designed UI using HTML and CSS
+- Added interactivity using JavaScript
+- Created dynamic event pages using URL parameters
+- Implemented login system (basic validation)
+- Added registration functionality with seat tracking
 # Installation
-[commands]
+git clone https://github.com/Jibi2004/BuzzCampus.git
+cd BuzzCampus
 
 # Run
-[commands]
-
+index.html
 ### Project Documentation
 For Software:
 
