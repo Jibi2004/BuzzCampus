@@ -8,7 +8,7 @@
 ### Team Members
 - Member 1: Anjana Murali - BMC
 - Member 2: Jibi Manoj - BMC
-- Member 3: [Name] - [collage]
+
 
 ### Hosted Project Link
 [mention your project hosted project link here]
